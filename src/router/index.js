@@ -1,23 +1,18 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+
+// 导入组件
+import HomeView from '@/views/Home/HomeView.vue'
+import UserView from '@/views/User/UserView.vue'
 
 Vue.use(VueRouter)
 
+// 路由规则的数组
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+  // 主页的路由规则
+  { path: '/', component: HomeView },
+  // 我的路由规则
+  { path: '/user', component: UserView }
 ]
 
 const router = new VueRouter({
